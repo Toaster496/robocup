@@ -1,0 +1,13 @@
+# Motor Control Firmware Directory
+
+This directory contains motor control code for the Pololu G2 motor drivers.
+
+## Files to be added:
+- motor_driver.py - Main motor control class
+- kinematics.py - Omnidirectional drive kinematics
+- pid_controller.py - PID control implementation
+- test_motor_direction.py - Motor direction testing script
+- calibrate_encoders.py - Encoder calibration
+- calibrate_speed.py - Speed calibration
+- tune_pid.py - PID tuning utility
+- calibrate_kinematics.py - Kinematic calibration
