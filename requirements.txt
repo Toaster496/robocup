@@ -1,0 +1,83 @@
+# Requirements for Open Jr RoboCup Soccer Robot
+
+## Core Dependencies
+RPi.GPIO>=0.7.1
+smbus2>=0.4.3
+numpy>=1.21.0
+PyYAML>=6.0
+
+## Computer Vision
+opencv-python>=4.5.0
+pillow>=9.0.0
+
+## Motor Control
+pigpio>=1.78  # For hardware PWM on Jetson
+
+## Development & Testing
+pytest>=7.0.0
+pytest-cov>=3.0.0
+black>=22.0.0
+flake8>=4.0.0
+
+## Documentation
+markdown>=3.3.0
+
+## Optional: Deep Learning (for advanced vision)
+# torch>=1.10.0
+# torchvision>=0.11.0
+# tensorrt>=8.0.0  # For Jetson Orin Nano acceleration
+
+## Installation Instructions
+
+### On NVIDIA Jetson Orin Nano (JetPack 5.x+)
+
+1. **Update system packages:**
+   ```bash
+   sudo apt update
+   sudo apt upgrade -y
+   ```
+
+2. **Install system dependencies:**
+   ```bash
+   sudo apt install -y python3-pip python3-dev \
+       libhdf5-serial-dev hdf5-tools \
+       libatlas-base-dev libjasper-dev \
+       libqtgui4 libqt4-test \
+       i2c-tools python3-smbus
+   ```
+
+3. **Enable I2C interface:**
+   ```bash
+   sudo raspi-config
+   # Navigate to: Interface Options -> I2C -> Enable
+   ```
+
+4. **Install Python packages:**
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+
+5. **Verify I2C devices:**
+   ```bash
+   i2cdetect -r -y <bus_number>
+   # Should show BNO055 at 0x28 or 0x29
+   ```
+
+6. **Configure camera:**
+   ```bash
+   # For CSI camera on Jetson
+   nvgstcapture-1.0
+   ```
+
+### Notes for Jetson Orin Nano
+
+- Use `python3` explicitly for all commands
+- GPIO access may require running as root or adding user to gpio group:
+  ```bash
+  sudo usermod -a -G gpio $USER
+  ```
+- For hardware PWM, consider using pigpio daemon:
+  ```bash
+  sudo systemctl enable pigpiod
+  sudo systemctl start pigpiod
+  ```

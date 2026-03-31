@@ -1,0 +1,55 @@
+# Motor GPIO Pin Configuration
+# NVIDIA Jetson Orin Nano GPIO Assignment
+
+motors:
+  - id: 1
+    name: "Front Motor"
+    pwm_pin: 12  # GPIO12 (PWM0)
+    dir_pin: 16  # GPIO16
+    en_pin: 20   # GPIO20
+    fault_pin: 21  # GPIO21
+    inverted: false
+    
+  - id: 2
+    name: "Rear Left Motor"
+    pwm_pin: 13  # GPIO13 (PWM1)
+    dir_pin: 19  # GPIO19
+    en_pin: 26   # GPIO26
+    fault_pin: 20  # GPIO20 (shared)
+    inverted: false
+    
+  - id: 3
+    name: "Rear Right Motor"
+    pwm_pin: 22  # GPIO22 (PWM2)
+    dir_pin: 23  # GPIO23
+    en_pin: 24   # GPIO24
+    fault_pin: 25  # GPIO25
+    inverted: true  # Adjust based on motor orientation
+
+# Kicker Solenoid Configuration
+kicker:
+  control_pin: 5  # GPIO5
+  kick_duration_ms: 50
+  cooldown_ms: 1000
+  max_power_level: 3
+  power_levels:
+    - level: 1
+      charge_time_ms: 100
+      description: "Light touch"
+    - level: 2
+      charge_time_ms: 200
+      description: "Medium kick"
+    - level: 3
+      charge_time_ms: 350
+      description: "Full power"
+
+# I2C Configuration
+i2c:
+  bus: 1
+  imu_address: 0x28  # BNO055 default address
+
+# Notes:
+# - PWM pins must support hardware PWM on Jetson Orin Nano
+# - Verify pin numbers against your carrier board pinout
+# - Some pins may need device tree configuration
+# - GPIO numbering is BCM (Broadcom) style
