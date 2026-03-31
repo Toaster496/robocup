@@ -1,0 +1,88 @@
+# Camera Calibration Parameters
+# Arducam IMX477 for Open Jr RoboCup Soccer Robot
+
+camera:
+  model: "Arducam IMX477"
+  sensor: "Sony IMX477"
+  interface: "MIPI CSI-2"
+  
+intrinsics:
+  # These values should be obtained through camera calibration
+  # Using placeholder values - recalibrate with actual camera
+  focal_length:
+    fx: 1000.0
+    fy: 1000.0
+  principal_point:
+    cx: 960.0  # width/2 for 1920x1080
+    cy: 540.0  # height/2 for 1920x1080
+  distortion:
+    k1: 0.0
+    k2: 0.0
+    p1: 0.0
+    p2: 0.0
+    k3: 0.0
+
+extrinsics:
+  # Camera pose relative to robot center
+  position:
+    x_m: 0.0
+    y_m: 0.0
+    z_m: 0.15  # 150mm above ground
+  orientation:
+    roll_deg: 0.0
+    pitch_deg: -15.0  # Tilted down 15 degrees
+    yaw_deg: 0.0
+
+vision:
+  ball_detection:
+    color_space: "HSV"
+    orange_range:
+      h_min: 10
+      h_max: 25
+      s_min: 100
+      s_max: 255
+      v_min: 100
+      v_max: 255
+    min_contour_area: 100
+    max_contour_area: 5000
+    
+  field_detection:
+    green_range:
+      h_min: 35
+      h_max: 85
+      s_min: 50
+      s_max: 255
+      v_min: 50
+      v_max: 255
+      
+  goal_detection:
+    blue_range:
+      h_min: 100
+      h_max: 130
+      s_min: 100
+      s_max: 255
+      v_min: 100
+      v_max: 255
+    yellow_range:
+      h_min: 25
+      h_max: 35
+      s_min: 100
+      s_max: 255
+      v_min: 100
+      v_max: 255
+
+processing:
+  image_width: 1920
+  image_height: 1080
+  target_width: 640  # Downscaled for processing
+  target_height: 480
+  frame_rate: 60
+  exposure_mode: "auto"
+  gain: "auto"
+  
+calibration:
+  checkerboard:
+    squares_x: 9
+    squares_y: 6
+    square_size_mm: 25
+  calibration_file: "/workspace/config/camera_intrinsics.yaml"

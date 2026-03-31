@@ -1,0 +1,17 @@
+Category,Component,Quantity,Description,Supplier,Link
+Drive System,Metal Gearmotor,3,"10:1 ratio, 37Dx50L mm, 24V with helical pinion",Core Electronics,https://core-electronics.com.au/10-1-metal-gearmotor-37dx50l-mm-24v-helical-pinion-47214.html
+Drive System,Omni Wheels,3,"3604 series, 14mm bore, 72mm diameter",Core Electronics,https://core-electronics.com.au/3604-series-omni-wheel-14mm-bore-72mm-diameter.html
+Drive System,Motor Brackets,2 pairs,"Pololu stamped aluminum L-bracket for 37D mm gearmotors",Core Electronics,https://core-electronics.com.au/pololu-stamped-aluminum-l-bracket-pair-for-37d-mm-metal-gearmotors.html
+Drive System,Shaft Adapters,2 packs,"Pololu universal aluminum mounting hub for 6mm shaft (4-40 holes)",Core Electronics,https://core-electronics.com.au/pololu-universal-aluminum-mounting-hub-for-6mm-shaft-4-40-holes-2-pack.html
+Motor Control,Motor Drivers,3,"Pololu G2 High Power Motor Driver 24V21",Core Electronics,https://core-electronics.com.au/pololu-g2-high-power-motor-driver-24v21.html
+Motor Control,Flyback Diodes,25,"1N4007 general purpose diodes",Core Electronics,https://core-electronics.com.au/general-purpose-diode-1n4007.html
+Motor Control,Fuses,2,"20A 6.35x32mm 3AG slow blow ceramic fuse",Aus Electronics Direct,https://www.auselectronicsdirect.com.au/20a-6.35x32mm-3ag-slow-blow-ceramic-fuse-10-pack
+Computing & Vision,Main Computer,1,"NVIDIA Jetson Orin Nano Developer Kit",Amazon AU,https://www.amazon.com.au/NVIDIA-Jetson-Orin-Nano-Developer/dp/B0BZJTQ5YP
+Computing & Vision,Camera,1,"Arducam 12MP IMX477 for Raspberry Pi/Jetson",IoT Store,https://iot-store.com.au/products/b0272-arducam-12mp-imx477-camera-raspberry-pi
+Sensors,IMU,1,"Adafruit BNO055 9-DOF Absolute Orientation IMU Fusion Breakout",Core Electronics,https://core-electronics.com.au/adafruit-9-dof-absolute-orientation-imu-fusion-breakout-bno055.html
+Power System,Battery,1,"Gens Ace 22.2V 2200mAh 45C 6S LiPo Soft Case",Hobbies Direct,https://hobbiesdirect.com.au/products/gens-ace-222v-2200mah-45c-soft-case-lipo-battery-gea6s220045e3-56305
+Power System,Buck Converter,1,"Pololu 5V 9A Step-Down Voltage Regulator D24V90F5",Core Electronics,https://core-electronics.com.au/pololu-5v-9a-step-down-voltage-regulator-d24v90f5.html
+Power System,Power Switch,1,"Screw switch",Wildman Rocketry,https://wildmanrocketry.com/products/screw-switch
+Kicking Mechanism,Solenoid,1,"Abletop DC 12V solenoid electromagnet",Amazon AU,https://www.amazon.com.au/Abletop-Solenoid-Electromagnetic-Electric-Automobiles/dp/B07G15X91N
+Kicking Mechanism,Solenoid Controller,1,"TIP120 Power Darlington Transistors (use 1 of 3-pack)",Core Electronics,https://core-electronics.com.au/tip120-power-darlington-transistors-3-pack.html
+Mechanical Parts,3D Printing Filament,1,"TPU 85A/90A flexible filament",Bambu Lab AU,https://au.store.bambulab.com/products/tpu-85a-tpu-90a?id=573760925208563742

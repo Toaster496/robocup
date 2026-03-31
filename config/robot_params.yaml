@@ -1,0 +1,99 @@
+# Robot Configuration Parameters
+# Open Jr RoboCup Soccer Robot
+
+robot:
+  name: "Open Jr RoboCup Soccer Bot"
+  team_id: 0
+  version: "1.0.0"
+
+drive:
+  type: "omnidirectional_3wheel"
+  wheel_diameter_mm: 72
+  wheel_base_mm: 150  # Distance from center to each wheel
+  gear_ratio: 10.0
+  max_velocity_mps: 2.0
+  max_angular_velocity_rads: 6.0
+  
+  motor:
+    rated_voltage_v: 24
+    no_load_speed_rpm: 525  # At 24V with 10:1 gearbox
+    stall_torque_nm: 2.5   # Approximate at 24V
+    no_load_current_a: 0.3
+    stall_current_a: 5.0
+    
+  pid:
+    kp: 1.0
+    ki: 0.1
+    kd: 0.05
+    integral_limit: 10.0
+
+power:
+  battery:
+    type: "LiPo 6S"
+    nominal_voltage_v: 22.2
+    capacity_mah: 2200
+    discharge_rate_c: 45
+    low_voltage_cutoff_v: 18.0
+    
+  buck_converter:
+    output_voltage_v: 5.0
+    max_current_a: 9.0
+    
+  fuses:
+    main_rating_a: 20
+    type: "slow_blow"
+
+kicker:
+  type: "solenoid"
+  voltage_v: 12
+  max_charge_time_ms: 500
+  kick_power_levels:
+    - level: 1
+      charge_time_ms: 100
+      description: "Light touch"
+    - level: 2
+      charge_time_ms: 200
+      description: "Medium kick"
+    - level: 3
+      charge_time_ms: 350
+      description: "Full power"
+  cooldown_ms: 1000
+  max_kicks_per_minute: 30
+
+sensors:
+  imu:
+    type: "BNO055"
+    i2c_address: 0x28
+    orientation:
+      x_offset_deg: 0.0
+      y_offset_deg: 0.0
+      z_offset_deg: 0.0
+    fusion_mode: "NDOF"
+    data_rate_hz: 100
+    
+  camera:
+    type: "Arducam IMX477"
+    resolution:
+      width: 1920
+      height: 1080
+    frame_rate_fps: 60
+    fov_horizontal_deg: 65
+    mount_height_mm: 150
+    tilt_angle_deg: -15  # Downward tilt
+
+control:
+  loop_rate_hz: 100
+  watchdog_timeout_ms: 500
+  emergency_stop_on_fault: true
+  
+communication:
+  joystick_deadzone: 0.1
+  max_command_velocity_mps: 1.5
+  max_command_angular_velocity_rads: 4.0
+
+safety:
+  max_motor_temperature_c: 80
+  max_battery_temperature_c: 60
+  current_limit_a: 15.0
+  collision_detection_enabled: true
+  collision_current_threshold_a: 8.0
